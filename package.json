@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/resources_pages",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Web UI components for the Sudobility resources catalog (tile grid of language-specific helper links)",
   "type": "module",
   "main": "./dist/index.js",

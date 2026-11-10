@@ -1,6 +1,6 @@
-export { ResourcesPage } from "./ResourcesPage";
-export { ResourceTile } from "./ResourceTile";
-export { ResourcesPageConnected } from "./ResourcesPageConnected";
+export { ResourcesPage } from './ResourcesPage';
+export { ResourceTile } from './ResourceTile';
+export { ResourcesPageConnected } from './ResourcesPageConnected';
 
 export type {
   Resource,
@@ -8,5 +8,5 @@ export type {
   ResourcesPageLabels,
   ResourcesPageFormatters,
   ResourceTileProps,
-} from "./types";
-export type { ResourcesPageConnectedProps } from "./ResourcesPageConnected";
+} from './types';
+export type { ResourcesPageConnectedProps } from './ResourcesPageConnected';

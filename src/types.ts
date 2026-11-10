@@ -4,8 +4,8 @@
  * Every user-facing string arrives via `labels` and every derived value via
  * `formatters`, so the host owns copy and i18n. No component here fetches.
  */
-import type { ReactNode } from "react";
-import type { Resource } from "@sudobility/resources_client";
+import type { ReactNode } from 'react';
+import type { Resource } from '@sudobility/resources_client';
 
 export type { Resource };
 
