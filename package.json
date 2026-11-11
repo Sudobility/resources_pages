@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/resources_pages",
-  "version": "0.0.2",
+  "version": "0.1.1",
   "description": "Web UI components for the Sudobility resources catalog (tile grid of language-specific helper links)",
   "type": "module",
   "main": "./dist/index.js",
@@ -31,7 +31,7 @@
   },
   "peerDependencies": {
     "@sudobility/design": "^1.1.71",
-    "@sudobility/resources_client": "^0.0.1",
+    "@sudobility/resources_client": "^0.1.0",
     "@sudobility/types": "^1.9.79",
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0"
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@eslint/js": "~10.0.1",
     "@sudobility/design": "^1.1.71",
-    "@sudobility/resources_client": "^0.0.1",
+    "@sudobility/resources_client": "^0.1.0",
     "@sudobility/types": "^1.9.79",
     "@testing-library/jest-dom": "~7.0.1",
     "@testing-library/react": "~16.3.3",

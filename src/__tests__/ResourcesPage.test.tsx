@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { ResourcesPage } from '../ResourcesPage';
-import type { ResourcesPageProps, Resource } from '../types';
+import type { ResourcesPageProps, ResourceSection } from '../types';
 
 const labels: ResourcesPageProps['labels'] = {
   title: 'Resources',
@@ -13,38 +13,32 @@ const formatters: ResourcesPageProps['formatters'] = {
   shortenDomain: url => url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0],
 };
 
-const resources: Resource[] = [
+const sections: ResourceSection[] = [
   {
-    id: 'a',
-    app: 'music',
-    locale: 'en',
-    title: 'Learn Theory',
-    text: 'Music theory basics',
-    iconUrl: 'https://example.com/favicon.png',
-    url: 'https://www.musictheory.net/lessons',
+    id: 's1',
+    title: 'Sheet music',
     sortOrder: 0,
-    enabled: true,
     createdAt: '2026-01-01T00:00:00.000Z',
     updatedAt: '2026-01-01T00:00:00.000Z',
-  },
-  {
-    id: 'b',
-    app: 'music',
-    locale: 'en',
-    title: 'Metronome',
-    text: '',
-    iconUrl: '',
-    url: 'https://metronome.example.org',
-    sortOrder: 1,
-    enabled: true,
-    createdAt: '2026-01-01T00:00:00.000Z',
-    updatedAt: '2026-01-01T00:00:00.000Z',
+    resources: [
+      {
+        id: 'a',
+        title: 'Learn Theory',
+        text: 'Music theory basics',
+        iconUrl: 'https://example.com/favicon.png',
+        url: 'https://www.musictheory.net/lessons',
+        sortOrder: 0,
+        enabled: true,
+        createdAt: '2026-01-01T00:00:00.000Z',
+        updatedAt: '2026-01-01T00:00:00.000Z',
+      },
+    ],
   },
 ];
 
 function base(overrides: Partial<ResourcesPageProps> = {}): ResourcesPageProps {
   return {
-    resources: [],
+    sections: [],
     isLoading: false,
     error: null,
     labels,
@@ -61,7 +55,7 @@ describe('ResourcesPage', () => {
     expect(container.querySelector('.animate-spin')).not.toBeNull();
   });
 
-  it('shows the empty state', () => {
+  it('shows the empty state when there are no sections', () => {
     render(<ResourcesPage {...base()} />);
     expect(screen.getByText('No resources yet')).toBeInTheDocument();
   });
@@ -72,8 +66,9 @@ describe('ResourcesPage', () => {
     expect(screen.getByText('boom')).toBeInTheDocument();
   });
 
-  it('renders a tile per resource with title, domain and link', () => {
-    render(<ResourcesPage {...base({ resources })} />);
+  it('renders a section heading and its tiles with domain + link', () => {
+    render(<ResourcesPage {...base({ sections })} />);
+    expect(screen.getByText('Sheet music')).toBeInTheDocument();
     expect(screen.getByText('Learn Theory')).toBeInTheDocument();
     expect(screen.getByText('musictheory.net')).toBeInTheDocument();
     const link = screen.getByRole('link', { name: /Learn Theory/ });
@@ -83,8 +78,8 @@ describe('ResourcesPage', () => {
 
   it('calls onResourceClick when a tile is opened', () => {
     const onResourceClick = vi.fn();
-    render(<ResourcesPage {...base({ resources, onResourceClick })} />);
+    render(<ResourcesPage {...base({ sections, onResourceClick })} />);
     fireEvent.click(screen.getByRole('link', { name: /Learn Theory/ }));
-    expect(onResourceClick).toHaveBeenCalledWith(resources[0]);
+    expect(onResourceClick).toHaveBeenCalledWith(sections[0].resources[0]);
   });
 });

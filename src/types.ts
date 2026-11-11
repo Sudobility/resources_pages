@@ -1,18 +1,19 @@
 /**
  * Prop contracts for the presentational resources components.
  *
- * Every user-facing string arrives via `labels` and every derived value via
- * `formatters`, so the host owns copy and i18n. No component here fetches.
+ * The catalog is sectioned: the page renders a heading per section and a grid
+ * of tiles under it. Every user-facing string arrives via `labels` and every
+ * derived value via `formatters`; no component here fetches.
  */
 import type { ReactNode } from 'react';
-import type { Resource } from '@sudobility/resources_client';
+import type { Resource, ResourceSection } from '@sudobility/resources_client';
 
-export type { Resource };
+export type { Resource, ResourceSection };
 
 export interface ResourcesPageLabels {
-  /** Heading above the grid. Pass '' to suppress it. */
+  /** Heading above the whole page. Pass '' to suppress it. */
   title: string;
-  /** Shown (muted, centered) when there are no resources. */
+  /** Shown (muted, centered) when there are no sections. */
   empty: string;
   /** Title of the error alert. */
   errorTitle: string;
@@ -34,7 +35,7 @@ export interface ResourceTileProps {
 }
 
 export interface ResourcesPageProps {
-  resources: Resource[];
+  sections: ResourceSection[];
   isLoading: boolean;
   error: string | null;
   labels: ResourcesPageLabels;

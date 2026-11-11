@@ -1,8 +1,8 @@
 /**
- * @fileoverview The resources page: a responsive grid of tiles, each a link to
- * a helper resource. Purely presentational — data, state, copy and formatters
- * all arrive via props. Loading / empty / error / content render as four
- * independent blocks (not an if/else chain), matching consumables_pages.
+ * @fileoverview The resources page: a heading per section, each over a
+ * responsive grid of tiles linking to a helper resource. Purely
+ * presentational — data, state, copy and formatters all arrive via props.
+ * Loading / empty / error / content render as four independent blocks.
  */
 import { colors, ui } from '@sudobility/design';
 import { LoadingSpinner } from './LoadingSpinner';
@@ -10,7 +10,7 @@ import { ResourceTile } from './ResourceTile';
 import type { ResourcesPageProps } from './types';
 
 export function ResourcesPage({
-  resources,
+  sections,
   isLoading,
   error,
   labels,
@@ -42,24 +42,32 @@ export function ResourcesPage({
       {isLoading && <LoadingSpinner />}
 
       {!isLoading &&
-        resources.length === 0 &&
+        sections.length === 0 &&
         (emptyStateComponent ?? (
           <p className={`${ui.text.muted} text-center py-8`}>{labels.empty}</p>
         ))}
 
-      {!isLoading && resources.length > 0 && (
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-          {resources.map(resource => (
-            <ResourceTile
-              key={resource.id}
-              resource={resource}
-              shortenDomain={formatters.shortenDomain}
-              onClick={onResourceClick}
-              openAriaLabel={labels.openAriaLabel}
-            />
-          ))}
-        </div>
-      )}
+      {!isLoading &&
+        sections.map(section => (
+          <section key={section.id} className='mb-10'>
+            {section.title !== '' && (
+              <h2 className='text-xl font-semibold mb-4 text-foreground'>
+                {section.title}
+              </h2>
+            )}
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+              {section.resources.map(resource => (
+                <ResourceTile
+                  key={resource.id}
+                  resource={resource}
+                  shortenDomain={formatters.shortenDomain}
+                  onClick={onResourceClick}
+                  openAriaLabel={labels.openAriaLabel}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
     </div>
   );
 }
