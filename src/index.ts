@@ -4,7 +4,7 @@ export { ResourcesPageConnected } from './ResourcesPageConnected';
 
 export type {
   Resource,
-  ResourceSection,
+  ResourceSectionWithResources,
   ResourcesPageProps,
   ResourcesPageLabels,
   ResourcesPageFormatters,

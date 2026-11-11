@@ -6,9 +6,12 @@
  * derived value via `formatters`; no component here fetches.
  */
 import type { ReactNode } from 'react';
-import type { Resource, ResourceSection } from '@sudobility/resources_client';
+import type {
+  Resource,
+  ResourceSectionWithResources,
+} from '@sudobility/resources_client';
 
-export type { Resource, ResourceSection };
+export type { Resource, ResourceSectionWithResources };
 
 export interface ResourcesPageLabels {
   /** Heading above the whole page. Pass '' to suppress it. */
@@ -35,7 +38,7 @@ export interface ResourceTileProps {
 }
 
 export interface ResourcesPageProps {
-  sections: ResourceSection[];
+  sections: ResourceSectionWithResources[];
   isLoading: boolean;
   error: string | null;
   labels: ResourcesPageLabels;

@@ -1,7 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { ResourcesPage } from '../ResourcesPage';
-import type { ResourcesPageProps, ResourceSection } from '../types';
+import type {
+  ResourcesPageProps,
+  ResourceSectionWithResources,
+} from '../types';
 
 const labels: ResourcesPageProps['labels'] = {
   title: 'Resources',
@@ -13,7 +16,7 @@ const formatters: ResourcesPageProps['formatters'] = {
   shortenDomain: url => url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0],
 };
 
-const sections: ResourceSection[] = [
+const sections: ResourceSectionWithResources[] = [
   {
     id: 's1',
     title: 'Sheet music',
