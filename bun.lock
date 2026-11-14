@@ -6,9 +6,9 @@
       "name": "@sudobility/resources_pages",
       "devDependencies": {
         "@eslint/js": "~10.0.1",
-        "@sudobility/design": "^1.1.71",
-        "@sudobility/resources_client": "^0.1.1",
-        "@sudobility/types": "^1.10.1",
+        "@sudobility/design": "^1.1.72",
+        "@sudobility/resources_client": "^0.1.2",
+        "@sudobility/types": "^1.10.2",
         "@testing-library/jest-dom": "~7.0.1",
         "@testing-library/react": "~16.3.3",
         "@types/bun": "~1.4.4",
@@ -34,9 +34,9 @@
         "vitest": "~4.1.12",
       },
       "peerDependencies": {
-        "@sudobility/design": "^1.1.71",
-        "@sudobility/resources_client": "^0.1.1",
-        "@sudobility/types": "^1.10.1",
+        "@sudobility/design": "^1.1.72",
+        "@sudobility/resources_client": "^0.1.2",
+        "@sudobility/types": "^1.10.2",
         "react": "^18.0.0 || ^19.0.0",
         "react-dom": "^18.0.0 || ^19.0.0",
       },
@@ -199,11 +199,11 @@
 
     "@standard-schema/spec": ["@standard-schema/spec@1.1.0", "", {}, "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w=="],
 
-    "@sudobility/design": ["@sudobility/design@1.1.71", "https://npm.pkg.github.com/download/@sudobility/design/1.1.71/e3a174cea0da29ebb2f1c590750c647cf3d7e11c", { "peerDependencies": { "clsx": ">=2.0.0", "tailwind-merge": ">=2.0.0" } }, "sha512-qqQn+OLksBqqMePYz2Zv2eXl2GCt6fk+WBUvhzhKx2ZMZdrf2JlIvIdWq9qOvdZlhizxuwMMl4dI8orMI43Ikw=="],
+    "@sudobility/design": ["@sudobility/design@1.1.72", "https://npm.pkg.github.com/download/@sudobility/design/1.1.72/ee29355781de03bb2e14986a51b75f8aaba4cd1b", { "peerDependencies": { "clsx": ">=2.0.0", "tailwind-merge": ">=2.0.0" } }, "sha512-gYRtMzHvVTZqLO3j0R9HLA8+gHnSl2GZ+swbPTL1+itfPIpBt0dr+k5AkaLFYar1pbL5XG+GpPtm/9oguSPj+A=="],
 
-    "@sudobility/resources_client": ["@sudobility/resources_client@0.1.1", "https://npm.pkg.github.com/download/@sudobility/resources_client/0.1.1/3ece3c6600ad0022a95072ba243f6a5fa04d3623", { "peerDependencies": { "@sudobility/types": "^1.10.1", "react": "^18.0.0 || ^19.0.0" } }, "sha512-Pih9DnvCJd6HBqiKEM3mm8R3ROsVFKLS+JSo6y/xboMJy+aeuB3zjw81wADlg9jpHtAEkImy+yvTyo/21a88Sw=="],
+    "@sudobility/resources_client": ["@sudobility/resources_client@0.1.2", "https://npm.pkg.github.com/download/@sudobility/resources_client/0.1.2/902527ae0c712720163f784d53f97b3a61f5159f", { "peerDependencies": { "@sudobility/types": "^1.10.2", "react": "^18.0.0 || ^19.0.0" } }, "sha512-qVeBj528RNJWIRp5TeBpraa2XK0IWNQ6pwLsV0w9bHEMW0y7amdxBUN2UDcRL5YjzQ2fj1l3lt1i6+beKbjbxQ=="],
 
-    "@sudobility/types": ["@sudobility/types@1.10.1", "https://npm.pkg.github.com/download/@sudobility/types/1.10.1/8e353f55822e0bc3fa9555dfe3aee593e140c012", {}, "sha512-LmJyjDDY5rHDET1wstkT0i59SSOrOXijL2iqrgfcK6VHtKcBEw7FFpbw4CyHn+dhR9kqkYpEydSfypoqw7crMg=="],
+    "@sudobility/types": ["@sudobility/types@1.10.2", "https://npm.pkg.github.com/download/@sudobility/types/1.10.2/c25e0a0122786dbd23651b15aab022c02c3a5a5e", {}, "sha512-CjMjxeoWE+WMt7HWPWFwcjmjXEbwS9ZPnoa6tN8dBzQSWCaCTZBIfjDDk7xwi+9/2OOxVaorDEHNOZTqSdUxvA=="],
 
     "@testing-library/dom": ["@testing-library/dom@10.4.2", "", { "dependencies": { "@babel/code-frame": "^7.10.4", "@babel/runtime": "^7.12.5", "@types/aria-query": "^5.0.1", "aria-query": "5.3.0", "dom-accessibility-api": "^0.5.9", "lz-string": "^1.5.0", "picocolors": "1.1.1", "pretty-format": "^27.0.2" } }, "sha512-yzr2S9HyAIdhz2/6qHgbs665Q7PKVcDF05vsOlHPxG1mo36gKVesdYVeDLnXgfjJ03CrKRk08knc6+E/9m8v2Q=="],
 
